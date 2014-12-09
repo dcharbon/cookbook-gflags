@@ -1,7 +1,7 @@
 remote_file "/tmp/#{node[:gflags][:package]}" do
   source "#{node[:gflags][:source]}#{node[:gflags][:package]}"
   mode 0644
-  checksum node[:gflags][:checksum]
+  #checksum node[:gflags][:checksum]
 end
 
 dpkg_package "gflags" do
@@ -13,7 +13,7 @@ if node[:gflags][:develop] then
   remote_file "/tmp/#{node[:gflags][:dev_package]}" do
     source "#{node[:gflags][:source]}#{node[:gflags][:dev_package]}"
     mode 0644
-    checksum node[:gflags][:checksum]
+    #checksum node[:gflags][:checksum]
   end
 
   dpkg_package "gflags-dev" do
